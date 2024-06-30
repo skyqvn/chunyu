@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        :root {
+            --C0: #b3e1ff;
+            --C1: #71CAFF;
+            --C2: #008CBA;
+            --C3: #006996;
+        }
+    </style>
+
+    <style>
+        @font-face {
+            font-family: 'SegoeBootSemilight';
+            src: url("./segoe_slboot.ttf");
+        }
+
+        @font-face {
+            font-family: 'Aa漫语手写体';
+            src: url("./Aa漫语手写体.ttf");
+        }
+
+        body{
+            font-family: 'Aa漫语手写体',fangsong;
+        }
+    </style>
+
+    <style>
+        a:link {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: red;
+            text-decoration: none;
+        }
+
+        a:active {
+            color: black;
+            text-decoration: none;
+        }
+
+        input {
+            vertical-align: middle;
+            height: 20px;
+            outline: none;
+            border-radius: 20px;
+            background: #fff;
+            border: 2px solid var(--C2);
+            color: #000;
+            padding-left: 10px;
+            letter-spacing: 1px;
+            transition: all 0.25s ease;
+        }
+
+        textarea {
+            outline: none;
+            border-radius: 20px;
+            background: #fff;
+            border: 2px solid var(--C2);
+            color: #000;
+            padding-left: 10px;
+            letter-spacing: 1px;
+            transition: all 0.25s ease;
+        }
+
+        .default_button {
+            box-sizing: content-box;
+            vertical-align: middle;
+            height: 20px;
+            outline: none;
+            text-align: center;
+            border-radius: 20px;
+            background: #fff;
+            border: 2px solid var(--C2);
+            color: var(--C2);
+            padding-left: 10px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .default_button:hover {
+            background-color: var(--C2);
+            color: white;
+        }
+
+        /*导航栏*/
+        ul.navigation_bar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: var(--C3);
+        }
+
+        ul.navigation_bar li {
+            float: left;
+        }
+
+        ul.navigation_bar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.navigation_bar li a:hover {
+            background-color: var(--C2);
+        }
+
+        ul.navigation_bar li span {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+        }
+
+        ul li.navigation_bar_right {
+            float: right;
+        }
+    </style>
+
+    <style>
+        /*PopupDiv*/
+        .mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .popup_div {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            padding: 0;
+        }
+
+        /*Waiting*/
+        .waiting_div {
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        .waiting_circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-family: 'SegoeBootSemilight', serif;
+            font-size: 75px;
+            color: var(--C3);
+        }
+
+        .waiting_info {
+            position: absolute;
+            top: 105px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 22px;
+            color: black;
+            display: inline;
+            white-space: nowrap;
+        }
+
+        /*Window*/
+        .window {
+            border-style: ridge;
+            border-width: 4px;
+            border-color: var(--C1);
+        }
+
+        .title_bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background-color: var(--C1);
+            border-style: solid;
+            border-width: 0 0 2px 0;
+            border-color: var(--C2);
+            padding: 0;
+        }
+
+        .window_title {
+            position: absolute;
+            margin-top: 1px;
+            left: 2px;
+            height: 16px;
+            font-size: 16px;
+            color: black;
+        }
+
+        .window_area {
+            position: absolute;
+            top: 22px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: white;
+            padding: 0;
+        }
+
+        .close_button {
+            position: absolute;
+            border-style: none;
+            margin-top: 2px;
+            width: 15px;
+            right: 2px;
+            height: 16px;
+            color: var(--C3);
+            background-color: var(--C0);
+        }
+
+        .close_button:hover {
+            color: var(--C0);
+            background-color: #af0000;
+        }
+
+        .close_button span {
+            position: absolute;
+            top: -3px;
+            left: 2px;
+            text-align: center;
+            font-family: Arial, serif;
+            font-size: 20px;
+        }
+
+        /*InfoBox*/
+        .info_box{
+            position: absolute;
+            top:30px;
+            height: 30px;
+            left: 0;
+            right: 0;
+        }
+
+        .info_box_text{
+            width: 100px;
+            height: 30px;
+            margin: auto;
+            background-color: var(--C0);
+            color: var(--C3);
+            border-radius: 5px;
+            text-align: center;
+            font-size: 25px;
+        }
+    </style>
+
+    <title>春语</title>
+</head>
+
+<body>
+<script>
+	function PopupDiv(width, height) {
+		let body = document.getElementsByTagName("body")[0];
+		this.mask = document.createElement("div");
+		this.div = document.createElement("div");
+		this.mask.className = "mask";
+		this.div.className = "popup_div";
+		this.div.style.setProperty("width", width + "px");
+		this.div.style.setProperty("height", height + "px");
+		body.append(this.mask);
+		this.mask.append(this.div);
+	}
+	
+	PopupDiv.prototype.Remove = function () {
+		this.mask.remove();
+	}
+
+	const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+	
+	function Waiting(info) {
+		this.pd = new PopupDiv(100, 140);
+		this.waitingCircle = document.createElement("span");
+		this.waitingInfo = document.createElement("span");
+		this.waitingCircle.innerText = '\uE052';//E052
+		this.waitingInfo.innerText = info;
+		this.pd.div.className = "popup_div waiting_div";
+		this.waitingCircle.className = "waiting_circle";
+		this.waitingInfo.className = "waiting_info";
+		this.stopped = false;
+		this.pd.div.append(this.waitingCircle);
+		this.pd.div.append(this.waitingInfo);
+		let t = this;
+		(async function () {
+			while (1) {
+				await sleep(25);
+				let c = t.waitingCircle.innerText.charCodeAt(0);
+				if (c >= 0xE0C6) {
+					c = 0xE052;
+				} else {
+					c += 1;
+				}
+				t.waitingCircle.innerText = String.fromCharCode(c);
+				if (t.stopped === true) {
+					t.pd.Remove();
+					return
+				}
+			}
+		})();
+	}
+	
+	Waiting.prototype.Stop = function () {
+		this.stopped = true;
+	}
+
+	function Window(width, height, title) {
+		this.pd = new PopupDiv(width, height+20);
+		this.titleBar = document.createElement("div");
+		this.windowTitle = document.createElement("span");
+		this.windowArea = document.createElement("div");
+		this.closeButton = document.createElement("button");
+		let cross = document.createElement("span");
+		this.pd.div.className = "popup_div window";
+		this.titleBar.className = "title_bar";
+		this.windowTitle.className = "window_title";
+		this.windowArea.className = "window_area";
+		this.closeButton.className = "close_button";
+		this.windowTitle.innerHTML = title;
+		cross.innerHTML = "×";
+		let t = this;
+		this.closeButton.onclick = function () {
+			t.Close();
+		}
+		this.titleBar.append(this.windowTitle);
+		this.closeButton.append(cross);
+		this.titleBar.append(this.closeButton);
+		this.pd.div.append(this.titleBar);
+		this.pd.div.append(this.windowArea);
+	}
+
+	Window.prototype.Close = function () {
+		this.pd.Remove();
+	}
+
+	function InfoBox(info){
+		let body = document.getElementsByTagName("body")[0];
+		let infoBox = document.createElement("div");
+		let infoBoxText=document.createElement("div");
+		infoBox.className="info_box";
+		infoBoxText.className="info_box_text";
+		infoBoxText.innerHTML=info;
+		infoBox.append(infoBoxText);
+		body.append(infoBox);
+		setTimeout(function (){
+			infoBox.remove();
+        },1000);
+    }
+</script>
+
+<script>
+	function editKey() {
+		let w = new Window(400, 300, "窗口");
+		// let w = new Waiting("你好");
+		setTimeout(() => {
+			// w.Stop();
+            w.Close();
+		}, 5000);
+	}
+
+	function copyEmail(){
+		let copyText = document.getElementById("emailInput");
+		navigator.clipboard.writeText(copyText.value);
+		InfoBox("已复制");
+    }
+
+	function contact(){
+		let w = new Window(350, 50, "联系作者");
+		w.windowArea.innerHTML=`<span style="position:relative; top: 10px">作者邮箱：
+<input id="emailInput" type="text" value="sky_8691@qq.com" readonly>
+<button class="default_button" onclick="copyEmail()">复制</button>
+</span>`;
+    }
+
+	function downloadZip(){
+		let w = new Window(350, 50, "下载文档");
+		w.windowArea.innerHTML=`<span style="position:relative;"><a href="https://skyqvn.github.io/chunyu/春语.zip">春语.zip⇩</a></span>
+<br>
+<span style="position:relative;">解压密码与令牌相同</span>`;
+    }
+</script>
+
+<ul class="navigation_bar">
+    <li><a href="https://github.com/skyqvn/chunyu">项目主页</a></li>
+    <li><a href="javascript:editKey()">更改秘钥</a></li>
+    <li><a href="javascript:contact()">联系作者</a></li>
+    <li><a href="javascript:downloadZip()">下载文档</a></li>
+</ul>
+
+</body>
+
+</html>
