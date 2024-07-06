@@ -13,11 +13,14 @@
         }
     </style>
     <style>
-        html,
-        body {
+        html, body {
+            position: absolute;
             padding: 0;
             margin: 0;
-            height: 100%;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
         }
     </style>
     <style>
@@ -416,7 +419,7 @@
     <li><a href="javascript:downloadZip()">下载文档</a></li>
 </ul>
 <div id="container" style="height: 100%">
-    <iframe id="pdf" width="100%" height="100%" src="./web/viewer.html?file=../春语.pdf"></iframe>
+    <iframe id="pdf" width="100%" height="95%" src="./web/viewer.html?file=../春语.pdf"></iframe>
 </div>
 
 <!--    <link rel="preload" href="./segoe_slboot.ttf" as="font" type="font/ttf" crossorigin="anonymous">-->
