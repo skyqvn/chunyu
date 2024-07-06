@@ -13,6 +13,8 @@
         }
     </style>
 
+    <!--    <link rel="preload" href="./segoe_slboot.ttf" as="font" type="font/ttf" crossorigin="anonymous">-->
+    <link rel="preload" href="./Aa漫语手写体.ttf" as="font" type="font/ttf" crossorigin="anonymous">
     <style>
         @font-face {
             font-family: 'SegoeBootSemilight';
@@ -24,8 +26,8 @@
             src: url("./Aa漫语手写体.ttf");
         }
 
-        body{
-            font-family: 'Aa漫语手写体',fangsong;
+        body {
+            font-family: 'Aa漫语手写体', fangsong;
         }
     </style>
 
@@ -247,15 +249,15 @@
         }
 
         /*InfoBox*/
-        .info_box{
+        .info_box {
             position: absolute;
-            top:30px;
+            top: 30px;
             height: 30px;
             left: 0;
             right: 0;
         }
 
-        .info_box_text{
+        .info_box_text {
             width: 100px;
             height: 30px;
             margin: auto;
@@ -326,7 +328,7 @@
 	}
 
 	function Window(width, height, title) {
-		this.pd = new PopupDiv(width, height+22);
+		this.pd = new PopupDiv(width, height + 22);
 		this.titleBar = document.createElement("div");
 		this.windowTitle = document.createElement("span");
 		this.windowArea = document.createElement("div");
@@ -354,19 +356,19 @@
 		this.pd.Remove();
 	}
 
-	function InfoBox(info){
+	function InfoBox(info) {
 		let body = document.getElementsByTagName("body")[0];
 		let infoBox = document.createElement("div");
-		let infoBoxText=document.createElement("div");
-		infoBox.className="info_box";
-		infoBoxText.className="info_box_text";
-		infoBoxText.innerHTML=info;
+		let infoBoxText = document.createElement("div");
+		infoBox.className = "info_box";
+		infoBoxText.className = "info_box_text";
+		infoBoxText.innerHTML = info;
 		infoBox.append(infoBoxText);
 		body.append(infoBox);
-		setTimeout(function (){
+		setTimeout(function () {
 			infoBox.remove();
-        },1000);
-    }
+		}, 1000);
+	}
 </script>
 
 <script>
@@ -375,30 +377,30 @@
 		// let w = new Waiting("你好");
 		setTimeout(() => {
 			// w.Stop();
-            w.Close();
+			w.Close();
 		}, 5000);
 	}
 
-	function copyEmail(){
+	function copyEmail() {
 		let copyText = document.getElementById("emailInput");
 		navigator.clipboard.writeText(copyText.value);
 		InfoBox("已复制");
-    }
+	}
 
-	function contact(){
+	function contact() {
 		let w = new Window(350, 50, "联系作者");
-		w.windowArea.innerHTML=`<span style="position:relative; top: 10px">作者邮箱：
+		w.windowArea.innerHTML = `<span style="position:relative; top: 10px">作者邮箱：
 <input id="emailInput" type="text" value="sky_8691@qq.com" readonly>
 <button class="default_button" onclick="copyEmail()">复制</button>
 </span>`;
-    }
+	}
 
-	function downloadZip(){
+	function downloadZip() {
 		let w = new Window(350, 50, "下载文档");
-		w.windowArea.innerHTML=`<span style="position:relative;"><a href="https://skyqvn.github.io/chunyu/春语.zip">春语.zip⇩</a></span>
+		w.windowArea.innerHTML = `<span style="position:relative;"><a href="./春语.pdf">春语.pdf⇩</a></span>
 <br>
 <span style="position:relative;">解压密码与令牌相同</span>`;
-    }
+	}
 </script>
 
 <ul class="navigation_bar">
@@ -407,7 +409,12 @@
     <li><a href="javascript:contact()">联系作者</a></li>
     <li><a href="javascript:downloadZip()">下载文档</a></li>
 </ul>
-
+<div id="container">
+<div id="article">
+    <iframe id="pdf" width="100%" height="800px" src="./web/viewer.html?file=../春语.pdf">
+    </iframe>
+</div>
+</div>
 </body>
 
 </html>
