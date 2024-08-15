@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache"/>
     <style>
         :root {
             --C0: #b3e1ff;
@@ -13,14 +13,20 @@
         }
     </style>
     <style>
-        html, body {
-            position: absolute;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html{
             padding: 0;
             margin: 0;
+        }
+        body,html {
+            position: absolute;
             left: 0;
-            right: 0;
+            right: 2px;
             top: 0;
-            bottom: 0;
+            bottom: 28px;
         }
     </style>
     <style>
@@ -418,9 +424,7 @@
     <li><a href="javascript:contact()">联系作者</a></li>
     <li><a href="javascript:downloadZip()">下载文档</a></li>
 </ul>
-<div id="container" style="height: 100%">
-    <iframe id="pdf" width="100%" height="95%" src="./web/viewer.html?file=../春语.pdf"></iframe>
-</div>
+<iframe id="pdf" width="100%" height="100%" src="./web/viewer.html?file=../春语.pdf"></iframe>
 
 <!--    <link rel="preload" href="./segoe_slboot.ttf" as="font" type="font/ttf" crossorigin="anonymous">-->
 <link rel="preload" href="./Aa漫语手写体.ttf" as="font" type="font/ttf" crossorigin="anonymous">
