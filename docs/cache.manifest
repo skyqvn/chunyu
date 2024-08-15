@@ -1,0 +1,10 @@
+CACHE MANIFEST #v0.11
+
+CACHE:
+build/*
+web/*
+Aa漫语手写体.ttf
+春语.pdf
+
+NETWORK:
+index.html
