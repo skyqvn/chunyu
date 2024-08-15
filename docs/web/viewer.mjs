@@ -1448,7 +1448,7 @@ class BasePreferences {
     spreadModeOnLoad: -1,
     textLayerMode: 1,
     viewOnLoad: 0,
-    disableAutoFetch: false,
+    disableAutoFetch: true,
     disableFontFace: false,
     disableRange: false,
     disableStream: false,
