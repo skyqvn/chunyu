@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Cache-Control" content="max-age=7200"/>
     <style>
         :root {
             --C0: #b3e1ff;
@@ -31,8 +31,8 @@
     </style>
     <style>
         @font-face {
-            font-family: 'SegoeBootSemilight';
-            src: url("./segoe_slboot.ttf");
+            font-family: 'Circle';
+            src: url("./circle.ttf");
         }
 
         @font-face {
@@ -182,7 +182,7 @@
             left: 0;
             right: 0;
             text-align: center;
-            font-family: 'SegoeBootSemilight', serif;
+            font-family: 'Circle', serif;
             font-size: 75px;
             color: var(--C3);
         }
@@ -387,15 +387,6 @@
 </script>
 
 <script>
-	function editKey() {
-		let w = new Window(400, 300, "窗口");
-		// let w = new Waiting("你好");
-		setTimeout(() => {
-			// w.Stop();
-			w.Close();
-		}, 5000);
-	}
-
 	function copyEmail() {
 		let copyText = document.getElementById("emailInput");
 		navigator.clipboard.writeText(copyText.value);
@@ -420,14 +411,13 @@
 
 <ul class="navigation_bar">
     <li><a href="https://github.com/skyqvn/chunyu">项目主页</a></li>
-    <li><a href="javascript:editKey()">更改秘钥</a></li>
     <li><a href="javascript:contact()">联系作者</a></li>
     <li><a href="javascript:downloadZip()">下载文档</a></li>
 </ul>
-<iframe id="pdf" width="100%" height="100%" src="./web/viewer.html?file=../春语.pdf"></iframe>
+<iframe id="pdf_canvas" width="100%" height="100%" src="./web/viewer.html?file=../春语.pdf"></iframe>
 
-<!--    <link rel="preload" href="./segoe_slboot.ttf" as="font" type="font/ttf" crossorigin="anonymous">-->
-<link rel="preload" href="./Aa漫语手写体.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+<link rel="preload" href="./Aa漫语手写体.ttf" as="font" type="font/ttf" crossorigin>
+
 </body>
 
 </html>
