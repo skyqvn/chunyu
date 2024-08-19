@@ -32,14 +32,14 @@
 	    localStorage.setItem('cachedFont', 'true');
     </script>
     <style>
-        @font-face {
-            font-family: 'Aa漫语手写体';
-            src: url("./Aa漫语手写体.ttf");
-        }
+        /*@font-face {*/
+        /*    font-family: 'Aa漫语手写体';*/
+        /*    src: url("./Aa漫语手写体.ttf");*/
+        /*}*/
 
         body {
-            font-family:  'Aa漫语手写体',fangsong;
-            /*font-family:  fangsong;*/
+            /*font-family:  'Aa漫语手写体',fangsong;*/
+            font-family:  fangsong;
         }
     </style>
 
@@ -400,7 +400,7 @@
 	}
 
 	function downloadZip() {
-		let w = new Window(350, 50, "下载文档");
+		let w = new Window(350, 25, "下载文档");
 		w.windowArea.innerHTML = `<span style="position:relative;"><a href="./春语.pdf" download="春语.pdf">春语.pdf⇩</a></span>`;
 	}
 </script>
