@@ -29,13 +29,13 @@
         }
     </style>
     <style>
-        @font-face {
-            font-family: 'Aa漫语手写体';
-            src: url("./Aa漫语手写体.ttf");
-        }
+        /*@font-face {*/
+        /*    font-family: 'Aa漫语手写体';*/
+        /*    src: url("./Aa漫语手写体.ttf");*/
+        /*}*/
 
         body {
-            font-family: 'Aa漫语手写体', fangsong;
+            font-family:  fangsong;
         }
     </style>
 
@@ -397,9 +397,7 @@
 
 	function downloadZip() {
 		let w = new Window(350, 50, "下载文档");
-		w.windowArea.innerHTML = `<span style="position:relative;"><a href="./春语.pdf" download="春语.pdf">春语.pdf⇩</a></span>
-<br>
-<span style="position:relative;">解压密码与令牌相同</span>`;
+		w.windowArea.innerHTML = `<span style="position:relative;"><a href="./春语.pdf" download="春语.pdf">春语.pdf⇩</a></span>`;
 	}
 </script>
 
