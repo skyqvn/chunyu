@@ -3,6 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
+
+    <title>春语</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <style>
         :root {
             --C0: #b3e1ff;
@@ -28,9 +32,6 @@
             bottom: 28px;
         }
     </style>
-<!--    <script>-->
-<!--	    localStorage.setItem('cachedFont', 'true');-->
-<!--    </script>-->
     <style>
         /*@font-face {*/
         /*    font-family: 'Aa漫语手写体';*/
@@ -281,8 +282,6 @@
             font-size: 25px;
         }
     </style>
-
-    <title>春语</title>
 </head>
 
 <body>
@@ -400,8 +399,10 @@
 	}
 
 	function downloadZip() {
-		let w = new Window(350, 25, "下载文档");
-		w.windowArea.innerHTML = `<span style="position:relative;"><a href="./春语.pdf" download="春语.pdf">春语.pdf⇩</a></span>`;
+		let w = new Window(350, 45, "下载文档");
+		w.windowArea.innerHTML = `<span style="position:relative;"><a href="./春语.pdf" download="春语.pdf">春语.pdf⇩</a></span>
+<br/>
+<span style="position:relative;"><a href="./春语.docx" download="春语.docx">春语.docx⇩</a></span>`;
 	}
 </script>
 
