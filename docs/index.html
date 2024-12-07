@@ -422,7 +422,7 @@
     fetch('./version.txt')
 	    .then((response) => response.text())
         .then((text)=>{
-	        document.getElementById('file_version').innerText='最后更新日期'+text;
+	        document.getElementById('file_version').innerText='最后更新日期：'+text;
         });
 </script>
 </body>
