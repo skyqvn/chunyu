@@ -413,10 +413,18 @@
     <li><a href="https://github.com/skyqvn/chunyu">项目主页</a></li>
     <li><a href="javascript:contact()">联系作者</a></li>
     <li><a href="javascript:downloadZip()">下载文档</a></li>
+    <li class="navigation_bar_right"><span id="file_version"></span></li>
 </ul>
 
 <iframe id="pdf_canvas" width="100%" height="100%" src="./web/viewer.html?file=../春语.pdf"></iframe>
 
+<script>
+    fetch('./version.txt')
+	    .then((response) => response.text())
+        .then((text)=>{
+	        document.getElementById('file_version').innerText='最后更新日期'+text;
+        });
+</script>
 </body>
 
 </html>
