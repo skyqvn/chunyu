@@ -20,11 +20,13 @@
             margin: 0;
             padding: 0;
         }
-        html{
+
+        html {
             padding: 0;
             margin: 0;
         }
-        body,html {
+
+        body, html {
             position: absolute;
             left: 0;
             right: 2px;
@@ -40,7 +42,7 @@
 
         body {
             /*font-family:  'Aa漫语手写体',fangsong;*/
-            font-family:  fangsong;
+            font-family: fangsong, serif;
         }
     </style>
 
@@ -416,14 +418,29 @@
     <li class="navigation_bar_right"><span id="file_version"></span></li>
 </ul>
 
-<iframe id="pdf_canvas" width="100%" height="100%" src="./web/viewer.html?file=../春语.pdf"></iframe>
+<iframe id="pdf_canvas" width="100%" height="100%"
+        src="./web/viewer.html?file=../春语.pdf#disableAutoFetch=true&disableStream=true"></iframe>
 
 <script>
-    fetch('./version.txt')
-	    .then((response) => response.text())
-        .then((text)=>{
-	        document.getElementById('file_version').innerText='最后更新日期：'+text;
-        });
+	// 添加加载动画
+	let loading = new Waiting("正在加载文档...");
+
+	// 监听iframe加载状态
+	document.getElementById('pdf_canvas').onload = function () {
+		loading.Stop();
+	}
+
+	// 启动预加载
+	window.onload = function () {
+		setTimeout(() => loading.Stop(), 3000); // 安全超时
+	}
+</script>
+<script>
+	fetch('./version.txt')
+		.then((response) => response.text())
+		.then((text) => {
+			document.getElementById('file_version').innerText = '最后更新日期：' + text;
+		});
 </script>
 </body>
 
