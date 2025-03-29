@@ -115,6 +115,7 @@ ul.navigation_bar li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    transition: all 0.25s ease;
 }
 
 ul.navigation_bar li a:hover {
