@@ -4460,7 +4460,7 @@ const defaultOptions = {
     kind: OptionKind.API
   },
   disableAutoFetch: {
-    value: true,
+    value: false,
     kind: OptionKind.API + OptionKind.PREFERENCE
   },
   disableFontFace: {
@@ -5205,7 +5205,7 @@ class BasePreferences {
     spreadModeOnLoad: -1,
     textLayerMode: 1,
     viewOnLoad: 0,
-    disableAutoFetch: true,
+    disableAutoFetch: false,
     disableFontFace: false,
     disableRange: false,
     disableStream: false,
