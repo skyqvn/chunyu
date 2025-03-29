@@ -1,0 +1,295 @@
+:root {
+    --C0: #b3e1ff;
+    --C1: #71CAFF;
+    --C2: #008CBA;
+    --C3: #006996;
+
+    --N-S: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body, html {
+    position: absolute;
+    left: 0;
+    right: 2px;
+    top: 0;
+    bottom: 28px;
+}
+
+body {
+    font-family: fangsong, serif;
+}
+
+a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+a:visited {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    text-decoration: none;
+}
+
+a:active {
+    color: black;
+    text-decoration: none;
+}
+
+input {
+    vertical-align: middle;
+    height: 20px;
+    outline: none;
+    border-radius: 20px;
+    background: #fff;
+    border: 2px solid var(--C2);
+    color: #000;
+    padding-left: 10px;
+    letter-spacing: 1px;
+    transition: all 0.25s ease;
+}
+
+textarea {
+    outline: none;
+    border-radius: 20px;
+    background: #fff;
+    border: 2px solid var(--C2);
+    color: #000;
+    padding-left: 10px;
+    letter-spacing: 1px;
+    transition: all 0.25s ease;
+}
+
+.default_button {
+    box-sizing: content-box;
+    vertical-align: middle;
+    height: 20px;
+    outline: none;
+    text-align: center;
+    border-radius: 20px;
+    background: #fff;
+    border: 2px solid var(--C2);
+    color: var(--C2);
+    padding-left: 10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.default_button:hover {
+    background-color: var(--C2);
+    color: white;
+}
+
+/*导航栏*/
+ul.navigation_bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--C3);
+    height: 47px;
+    font-size: var(--N-S);
+}
+
+ul.navigation_bar li {
+    float: left;
+}
+
+ul.navigation_bar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.navigation_bar li a:hover {
+    background-color: var(--C2);
+}
+
+ul.navigation_bar li span {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+ul.navigation_bar li select {
+    background: var(--C3);
+    border: 0;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 9px 5px;
+    transition: all 0.25s ease;
+    font-size: var(--N-S);
+    font-family: fangsong, serif;
+}
+
+ul.navigation_bar li select:hover {
+    background: var(--C2);
+    border-color: var(--C1);
+}
+
+ul.navigation_bar li select option {
+    background: var(--C3);
+    color: white;
+    padding: 5px;
+}
+
+ul.navigation_bar li select select:focus {
+    outline: none;
+    box-shadow: 0 0 5px var(--C1);
+}
+
+ul li.navigation_bar_right {
+    float: right;
+}
+
+/*PopupDiv*/
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.popup_div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 0;
+}
+
+/*Waiting*/
+.waiting_div {
+    border-radius: 10px;
+    background-color: white;
+}
+
+.waiting_circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Circle', serif;
+    font-size: 75px;
+    color: var(--C3);
+}
+
+.waiting_info {
+    position: absolute;
+    top: 105px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 22px;
+    color: black;
+    display: inline;
+    white-space: nowrap;
+}
+
+/*Window*/
+.window {
+    border-style: ridge;
+    border-width: 4px;
+    border-color: var(--C1);
+}
+
+.title_bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background-color: var(--C1);
+    border-style: solid;
+    border-width: 0 0 2px 0;
+    border-color: var(--C2);
+    padding: 0;
+}
+
+.window_title {
+    position: absolute;
+    margin-top: 1px;
+    left: 2px;
+    height: 16px;
+    font-size: 16px;
+    color: black;
+}
+
+.window_area {
+    position: absolute;
+    top: 22px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    padding: 0;
+}
+
+.close_button {
+    position: absolute;
+    border-style: none;
+    margin-top: 2px;
+    width: 15px;
+    right: 2px;
+    height: 16px;
+    color: var(--C3);
+    background-color: var(--C0);
+}
+
+.close_button:hover {
+    color: var(--C0);
+    background-color: #af0000;
+}
+
+.close_button span {
+    position: absolute;
+    top: -3px;
+    left: 2px;
+    text-align: center;
+    font-family: Arial, serif;
+    font-size: 20px;
+}
+
+/*InfoBox*/
+.info_box {
+    position: absolute;
+    top: 30px;
+    height: 30px;
+    left: 0;
+    right: 0;
+}
+
+.info_box_text {
+    width: 100px;
+    height: 30px;
+    margin: auto;
+    background-color: var(--C0);
+    color: var(--C3);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 25px;
+}
