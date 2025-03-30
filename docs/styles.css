@@ -259,6 +259,7 @@ ul li.navigation_bar_right {
     height: 16px;
     color: var(--C3);
     background-color: var(--C0);
+    cursor:pointer ;
 }
 
 .close_button:hover {
