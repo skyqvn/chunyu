@@ -147,15 +147,21 @@ ul.navigation_bar li select:hover {
     border-color: var(--C1);
 }
 
+ul.navigation_bar li select select:focus {
+    outline: none;
+    box-shadow: 0 0 5px var(--C1);
+}
+
 ul.navigation_bar li select option {
     background: var(--C3);
     color: white;
     padding: 5px;
+    cursor: pointer;
+    transition: all 0.25s ease;
 }
 
-ul.navigation_bar li select select:focus {
-    outline: none;
-    box-shadow: 0 0 5px var(--C1);
+ul.navigation_bar li select option:hover {
+    background-color: var(--C2);
 }
 
 ul li.navigation_bar_right {
@@ -259,7 +265,7 @@ ul li.navigation_bar_right {
     height: 16px;
     color: var(--C3);
     background-color: var(--C0);
-    cursor:pointer ;
+    cursor: pointer;
 }
 
 .close_button:hover {
