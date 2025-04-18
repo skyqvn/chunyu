@@ -1,26 +1,26 @@
-attrib -r .\docs\æ˜¥è¯­.pdf
-copy ..\æ˜¥è¯­.pdf docs
-attrib +r .\docs\æ˜¥è¯­.pdf
+attrib -r .\docs\´ºÓï.pdf
+copy ..\´ºÓï.pdf docs
+attrib +r .\docs\´ºÓï.pdf
 
-attrib -r .\docs\åƒç»´ä¸­è€ƒ-å‡é¢˜åˆ†ç±».pdf
-copy ..\åƒç»´ä¸­è€ƒ-å‡é¢˜åˆ†ç±».pdf docs
-attrib +r .\docs\åƒç»´ä¸­è€ƒ-å‡é¢˜åˆ†ç±».pdf
+attrib -r .\docs\Ç§Î¬ÖÐ¿¼-¼ÙÌâ·ÖÀà.pdf
+copy ..\Ç§Î¬ÖÐ¿¼-¼ÙÌâ·ÖÀà.pdf docs
+attrib +r .\docs\Ç§Î¬ÖÐ¿¼-¼ÙÌâ·ÖÀà.pdf
 
-attrib -r .\docs\äºŒå…­æ–‡é›†.pdf
-copy ..\äºŒå…­æ–‡é›†.pdf docs
-attrib +r .\docs\äºŒå…­æ–‡é›†.pdf
+attrib -r .\docs\¶þÁùÎÄ¼¯.pdf
+copy ..\¶þÁùÎÄ¼¯.pdf docs
+attrib +r .\docs\¶þÁùÎÄ¼¯.pdf
 
-attrib -r .\docs\æ˜¥è¯­.docx
-copy ..\æ˜¥è¯­.docx docs
-attrib +r .\docs\æ˜¥è¯­.docx
+attrib -r .\docs\´ºÓï.docx
+copy ..\´ºÓï.docx docs
+attrib +r .\docs\´ºÓï.docx
 
-attrib -r .\docs\åƒç»´ä¸­è€ƒ-å‡é¢˜åˆ†ç±».docx
-copy ..\åƒç»´ä¸­è€ƒ-å‡é¢˜åˆ†ç±».docx docs
-attrib +r .\docs\åƒç»´ä¸­è€ƒ-å‡é¢˜åˆ†ç±».docx
+attrib -r .\docs\Ç§Î¬ÖÐ¿¼-¼ÙÌâ·ÖÀà.docx
+copy ..\Ç§Î¬ÖÐ¿¼-¼ÙÌâ·ÖÀà.docx docs
+attrib +r .\docs\Ç§Î¬ÖÐ¿¼-¼ÙÌâ·ÖÀà.docx
 
-attrib -r .\docs\äºŒå…­æ–‡é›†.docx
-copy ..\äºŒå…­æ–‡é›†.docx docs
-attrib +r .\docs\äºŒå…­æ–‡é›†.docx
+attrib -r .\docs\¶þÁùÎÄ¼¯.docx
+copy ..\¶þÁùÎÄ¼¯.docx docs
+attrib +r .\docs\¶þÁùÎÄ¼¯.docx
 
 set date=%date:~0,4%/%date:~5,2%/%date:~8,2%
 echo %date% > .\docs\version.txt
