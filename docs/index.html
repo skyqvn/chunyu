@@ -109,6 +109,33 @@
 	}
 </script>
 
+<script type="module">
+	import * as pdfjsLib from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/5.3.31/pdf.min.mjs';
+
+	pdfjsLib.GlobalWorkerOptions.workerSrc =
+		'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/5.3.31/pdf.worker.min.mjs';
+
+	window.loadPDF = async function (url) {
+		const loadingTask = pdfjsLib.getDocument(url);
+		const pdf = await loadingTask.promise;
+		console.log("PDF 总页数:", pdf.numPages);
+
+		// 渲染第一页到 Canvas
+		const page = await pdf.getPage(1);
+		const canvas = document.getElementById('pdf-canvas');
+		const viewport = page.getViewport({scale: 1.5});
+		canvas.width = viewport.width;
+		canvas.height = viewport.height;
+
+		await page.render({
+			canvasContext: canvas.getContext('2d'),
+			viewport: viewport,
+		}).promise;
+	}
+
+	window.loadPDF('春语.pdf');
+</script>
+
 <script>
 	function copyEmail() {
 		let copyText = document.getElementById("emailInput");
@@ -136,8 +163,7 @@
 	}
 
 	function changeDocument(filename) {
-		const viewer = document.getElementById('pdf_canvas');
-		viewer.src = `./assets/web/viewer.html?file=../../${filename}`;
+		window.loadPDF(filename);
 	}
 </script>
 
@@ -155,8 +181,7 @@
     <li class="navigation_bar_right"><span id="file_version"></span></li>
 </ul>
 
-<iframe id="pdf_canvas" width="100%" height="100%"
-        src="./assets/web/viewer.html?file=../../春语.pdf"></iframe>
+<canvas id="pdf-canvas"></canvas>
 
 <script>
 	fetch('./version.txt')
